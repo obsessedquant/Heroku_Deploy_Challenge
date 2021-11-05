@@ -18,14 +18,16 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-urlz = os.getenv('DATABASE_URLZ')
+urlz = os.getenv('DATABASE_URLZ')  # used for Heroku deployment
+# urlz = 'postgresql://njfgtyroqyycuk:2b4d75c46d7bb5075e0146ac8e835985246903b252cc2423ad4779e9a7bb74ac@ec2-3-231-40-72.compute-1.amazonaws.com:5432/d15jf7fk1ra3kr'  # local machine testing
 
+print(f'urlz before try and except {urlz}', flush=True)
 
 try:
     if urlz:
         print(f'try has worked, urlz is: {urlz}', flush=True)
 except Exception as error:
-    urlz = "postgres://njfgtyroqyycuk:2b4d75c46d7bb5075e0146ac8e835985246903b252cc2423ad4779e9a7bb74ac@ec2-3-231-40-72.compute-1.amazonaws.com:5432/d15jf7fk1ra3kr"
+    urlz = "postgresql://njfgtyroqyycuk:2b4d75c46d7bb5075e0146ac8e835985246903b252cc2423ad4779e9a7bb74ac@ec2-3-231-40-72.compute-1.amazonaws.com:5432/d15jf7fk1ra3kr"
     print('except has activated', flush=True)
 
 print(f'urlz after try and except = {urlz}')
