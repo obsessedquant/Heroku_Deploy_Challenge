@@ -9,6 +9,20 @@ from flask import (
     request,
     redirect)
 
+
+# 1. create a new clean env
+# python -m venv <name>
+# 2. add this name to gitignore
+# 3. use git bash > source <name>/Scripts/activate
+# 4. conda deactivate
+# 5. pip freeze > make sure it's clean
+# 6. pip install dependencies > make sure you will have gunicorn
+# 7. make sure you create a db on heroku > make sure 'posgresql'
+# go to heroku website > go to app > Setting > create a new key for your correct DB link
+# 8. put this new var to your code
+# 9. python app.py on localhost
+
+
 #################################################
 # Flask Setup
 #################################################
